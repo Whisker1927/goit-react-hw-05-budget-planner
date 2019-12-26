@@ -1,1 +1,2 @@
-Live Netlify URL: https://whisker1927.netlify.com
+[Link to Git Hub Pages]
+https://Whisker1927.github.io/goit-react-hw-05-budget-planner
