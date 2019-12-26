@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import T from 'prop-types';
 import shortid from 'shortid';
+import Swal from 'sweetalert2';
 import Form from '../shared/Form';
 import Label from '../shared/Label';
 import Input from '../shared/Input';
@@ -30,6 +31,14 @@ export default class ExpenseForm extends Component {
     e.preventDefault();
     const { name, amount } = this.state;
 
+    if (amount === 0) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Enter a number greater than 0',
+      });
+      return;
+    }
     this.props.onSave({
       id: shortid.generate(),
       name,
